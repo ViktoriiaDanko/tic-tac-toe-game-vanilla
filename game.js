@@ -8,7 +8,7 @@ window.onload = function() {
     
     document.querySelector('.game').onclick = function(event) {
         if (event.target.className === 'block') {
-            number = number % 2 === 0 ? event.target.innerHTML = 'X' : event.target.innerHTML = '0';
+           return number % 2 ===  0 ? 'X' : '0';
         }
         gameResult();
         }
