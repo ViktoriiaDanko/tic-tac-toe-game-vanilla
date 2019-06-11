@@ -8,11 +8,12 @@ window.onload = function() {
     
     document.querySelector('.game').onclick = function(event) {
         if (event.target.className === 'block') {
-           return number % 2 ===  0 ? 'X' : '0';
+           if (number === 1 ? 0 : 1);
+           if (0 ? event.target.innerHTML = 'X' : event.target.innerHTML = '0');
         }
         gameResult();
-        }
     }
+
     function gameResult() {
         let allItems = document.getElementsByClassName('block');
         //console.log(allItems);
