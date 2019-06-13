@@ -4,11 +4,11 @@ window.onload = function() {
         document.querySelector('.game').innerHTML+='<div class="block"></div>';
     }
 
-    let number = '0';
+    let number = 0;
     
     document.querySelector('.game').onclick = function(event) {
         if (event.target.className === 'block') {
-            number = number === 1 ? '0' : 'X';
+            number = number === 'X' ? '0' : 'X';
             if (number === 'X') {
                 event.target.innerHTML = 'X';
             } else {
