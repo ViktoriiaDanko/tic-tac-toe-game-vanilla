@@ -8,8 +8,8 @@ window.onload = function() {
     
     document.querySelector('.game').onclick = function(event) {
         if (event.target.className === 'block') {
-            number = number === 1 ? 0 : 1;
-            if (number === 1) {
+            number = number === 1 ? '0' : 'X';
+            if (number === 'X') {
                 event.target.innerHTML = 'X';
             } else {
                 event.target.innerHTML = '0';
