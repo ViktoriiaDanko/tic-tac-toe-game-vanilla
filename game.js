@@ -9,7 +9,7 @@ window.onload = function() {
     document.querySelector('.game').onclick = function(event) {
         if (event.target.className === 'block') {
            if (number === 1 ? 0 : 1);
-           if (0 ? event.target.innerHTML = 'X' : event.target.innerHTML = '0');
+           if (number = number < 1 ? event.target.innerHTML = 'X' : event.target.innerHTML = '0');
         }
         gameResult();
     }
