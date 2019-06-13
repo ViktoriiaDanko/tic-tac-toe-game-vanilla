@@ -1,20 +1,20 @@
 window.onload = function() {
-    const NUMBER_OF_TITLES = 9;
-    for (let i = 0; i < NUMBER_OF_TITLES; i++) {
+    const NUMBER_OF_TILES = 9;
+    for (let i = 0; i < NUMBER_OF_TILES; i++) {
         document.querySelector('.game').innerHTML+='<div class="block"></div>';
     }
 
-    let number = 0;
+    let activePlayerIcon = 0;
     
     document.querySelector('.game').onclick = function(event) {
         if (event.target.className === 'block') {
-            number = number === 'X' ? '0' : 'X';
-            event.target.innerHTML = number;
+            activePlayerIcon = activePlayerIcon === 'X' ? '0' : 'X';
+            event.target.innerHTML = activePlayerIcon;
         }
-        gameResult();
+        wasGameEnded();
     }
 
-    function gameResult() {
+    function wasGameEnded() {
         let allItems = document.getElementsByClassName('block');
         //console.log(allItems);
         if (allItems[0].innerHTML === 'X' && allItems[1].innerHTML === 'X' && allItems[2].innerHTML === 'X') alert("Победили крестики!");
