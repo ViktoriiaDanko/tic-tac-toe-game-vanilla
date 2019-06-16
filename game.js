@@ -15,6 +15,7 @@ window.onload = function() {
     }
 
         function getGameStatus() {
+            let allItems = document.getElementsByClassName('block');
             if (allItems[0].innerHTML === 'X' && allItems[1].innerHTML === 'X' && allItems[2].innerHTML === 'X');
             if (allItems[3].innerHTML === 'X' && allItems[4].innerHTML === 'X' && allItems[5].innerHTML === 'X');
             if (allItems[6].innerHTML === 'X' && allItems[7].innerHTML === 'X' && allItems[8].innerHTML === 'X');
@@ -33,8 +34,5 @@ window.onload = function() {
             if (allItems[0].innerHTML === '0' && allItems[4].innerHTML === '0' && allItems[8].innerHTML === '0');
             if (allItems[2].innerHTML === '0' && allItems[4].innerHTML === '0' && allItems[6].innerHTML === '0');
         }
-    return {
-        getGameStatus()
-    }
 }
 
