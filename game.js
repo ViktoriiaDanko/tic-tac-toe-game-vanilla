@@ -11,7 +11,7 @@ window.onload = function() {
             activePlayerIcon = activePlayerIcon === 'X' ? '0' : 'X';
             event.target.innerHTML = activePlayerIcon;
         }
-        if(getGameStatus().isGameEnded) {
+        if (getGameStatus().isGameEnded) {
             alert(getGameStatus().winner === 'X' ? 'Победили крестики ' : 'Победили нолики ')
         }
     }
