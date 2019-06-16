@@ -4,7 +4,7 @@ window.onload = function() {
         document.querySelector('.game').innerHTML+='<div class="block"></div>';
     }
 
-    let activePlayerIcon = 0;
+    let activePlayerIcon = '0';
     
     document.querySelector('.game').onclick = function(event) {
         if (event.target.className === 'block') {
