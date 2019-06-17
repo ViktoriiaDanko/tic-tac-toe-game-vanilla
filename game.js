@@ -11,13 +11,23 @@ window.onload = function() {
             activePlayerIcon = activePlayerIcon === 'X' ? '0' : 'X';
             event.target.innerHTML = activePlayerIcon;
         }
+
+        let classListTic = document.querySelector('.tic').classList;
+        let classListTac = document.querySelector('.tac').classList;
+
         let gameResult = getGameStatus();
         if (gameResult.isGameEnded) {
-            alert (gameResult.winner === 'X' ? 'Победили крестики ' : 'Победили нолики ')
+            if (gameResult.winner === 'X') {
+                classListTic.remove('.hidden-item');
+                classListTic.add('.visible-item');
+            } else {
+                classListTac.remove('.hidden-item');
+                classListTac.add('.visible-item');
+            }
         }
     }
 
-        function getGameStatus() {
+    function getGameStatus() {
             let allItems = document.getElementsByClassName('block');
             if (allItems[0].innerHTML === 'X' && allItems[1].innerHTML === 'X' && allItems[2].innerHTML === 'X') return {isGameEnded: true, winner: 'X'};
             if (allItems[3].innerHTML === 'X' && allItems[4].innerHTML === 'X' && allItems[5].innerHTML === 'X') return {isGameEnded: true, winner: 'X'};

@@ -21,3 +21,7 @@ body {
     float: left;
     border: 1px solid black;
 }
+
+.hidden-item {
+    display: none;
+}
