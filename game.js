@@ -23,24 +23,23 @@ window.onload = function() {
     }
 
     function getGameStatus() {
-        let allItems = document.getElementsByClassName('block');
-        if (allItems[0].innerHTML === 'X' && allItems[1].innerHTML === 'X' && allItems[2].innerHTML === 'X') return {isGameEnded: true, winner: 'X'};
-        if (allItems[3].innerHTML === 'X' && allItems[4].innerHTML === 'X' && allItems[5].innerHTML === 'X') return {isGameEnded: true, winner: 'X'};
-        if (allItems[6].innerHTML === 'X' && allItems[7].innerHTML === 'X' && allItems[8].innerHTML === 'X') return {isGameEnded: true, winner: 'X'};
-        if (allItems[0].innerHTML === 'X' && allItems[3].innerHTML === 'X' && allItems[6].innerHTML === 'X') return {isGameEnded: true, winner: 'X'};
-        if (allItems[1].innerHTML === 'X' && allItems[4].innerHTML === 'X' && allItems[7].innerHTML === 'X') return {isGameEnded: true, winner: 'X'};
-        if (allItems[2].innerHTML === 'X' && allItems[5].innerHTML === 'X' && allItems[8].innerHTML === 'X') return {isGameEnded: true, winner: 'X'};
-        if (allItems[0].innerHTML === 'X' && allItems[4].innerHTML === 'X' && allItems[8].innerHTML === 'X') return {isGameEnded: true, winner: 'X'}; 
-        if (allItems[2].innerHTML === 'X' && allItems[4].innerHTML === 'X' && allItems[6].innerHTML === 'X') return {isGameEnded: true, winner: 'X'};
-
-        if (allItems[0].innerHTML === '0' && allItems[1].innerHTML === '0' && allItems[2].innerHTML === '0') return {isGameEnded: true, winner: '0'};
-        if (allItems[3].innerHTML === '0' && allItems[4].innerHTML === '0' && allItems[5].innerHTML === '0') return {isGameEnded: true, winner: '0'};
-        if (allItems[6].innerHTML === '0' && allItems[7].innerHTML === '0' && allItems[8].innerHTML === '0') return {isGameEnded: true, winner: '0'};
-        if (allItems[0].innerHTML === '0' && allItems[3].innerHTML === '0' && allItems[6].innerHTML === '0') return {isGameEnded: true, winner: '0'};
-        if (allItems[1].innerHTML === '0' && allItems[4].innerHTML === '0' && allItems[7].innerHTML === '0') return {isGameEnded: true, winner: '0'};
-        if (allItems[2].innerHTML === '0' && allItems[5].innerHTML === '0' && allItems[8].innerHTML === '0') return {isGameEnded: true, winner: '0'};
-        if (allItems[0].innerHTML === '0' && allItems[4].innerHTML === '0' && allItems[8].innerHTML === '0') return {isGameEnded: true, winner: '0'};
-        if (allItems[2].innerHTML === '0' && allItems[4].innerHTML === '0' && allItems[6].innerHTML === '0') return {isGameEnded: true, winner: '0'};
+        const allItems = document.getElementsByClassName('block');
+        if (isPlayerWin(allItems, 'X')) {
+            return {isGameEnded: true, winner: 'X'};
+        } else if (isPlayerWin(allItems, '0')) {
+            return {isGameEnded: true, winner: '0'};
+        }
     }
-}
 
+    function isPlayerWin(allItems, activePlayerIcon) {
+        if (allItems[0].innerHTML === activePlayerIcon && allItems[1].innerHTML === activePlayerIcon && allItems[2].innerHTML === activePlayerIcon) return true;
+        if (allItems[3].innerHTML === activePlayerIcon && allItems[4].innerHTML === activePlayerIcon && allItems[5].innerHTML === activePlayerIcon) return true;
+        if (allItems[6].innerHTML === activePlayerIcon && allItems[7].innerHTML === activePlayerIcon && allItems[8].innerHTML === activePlayerIcon) return true;
+        if (allItems[0].innerHTML === activePlayerIcon && allItems[3].innerHTML === activePlayerIcon && allItems[6].innerHTML === activePlayerIcon) return true;
+        if (allItems[1].innerHTML === activePlayerIcon && allItems[4].innerHTML === activePlayerIcon && allItems[7].innerHTML === activePlayerIcon) return true;
+        if (allItems[2].innerHTML === activePlayerIcon && allItems[5].innerHTML === activePlayerIcon && allItems[8].innerHTML === activePlayerIcon) return true;
+        if (allItems[0].innerHTML === activePlayerIcon && allItems[4].innerHTML === activePlayerIcon && allItems[8].innerHTML === activePlayerIcon) return true;
+        if (allItems[2].innerHTML === activePlayerIcon && allItems[4].innerHTML === activePlayerIcon && allItems[6].innerHTML === activePlayerIcon) return true;
+        return false;
+    }    
+}
